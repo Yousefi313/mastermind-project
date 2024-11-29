@@ -40,6 +40,13 @@
         //List der Farben 
         const colors = ['red', 'yellow', 'green', 'blue', 'black'];
 
+        for(let i = 1; i<= 10;i++){
+            for(let j = 1; j<=4; j++){
+                const childDiv = document.createElement('div');
+                childDiv.className = 'child-div';
+                childDiv.textContent = `${i}`;
+            }
+        }
         //40 Kreis dynamisch erstellen
         for (let i = 1; i <= 40; i++) {
             const childDiv = document.createElement('div');
