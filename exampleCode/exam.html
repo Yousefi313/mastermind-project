@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Circles</title>
+    <style>
+        #parent-div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 300px; /* Restrict width to fit 4 circles per line */
+        }
+
+        .child-div {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            margin: 5px;
+            cursor: pointer; /* Show pointer cursor to indicate interactivity */
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Sie haben eine Auswahl von folgende Farben:<br>Rot, Gelb, Grün, 'Blau', 'black'
+    </p>
+    <div id="parent-div"></div>
+
+    <script>
+        const parentDiv = document.getElementById('parent-div');
+
+        //List der Farben 
+        const colors = ['red', 'yellow', 'green', 'blue', 'black'];
+
+        //40 Kreis dynamisch erstellen
+        for (let i = 1; i <= 40; i++) {
+            const childDiv = document.createElement('div');
+            childDiv.className = 'child-div';
+            childDiv.textContent = `${i}`;
+            
+            let colorIndex = 0;
+
+            childDiv.addEventListener('click', function () {
+                this.style.backgroundColor = colors[colorIndex];
+                colorIndex = (colorIndex + 1) % colors.length;
+            });
+
+            parentDiv.appendChild(childDiv);
+        }
+    </script>
+</body>
+</html>
