@@ -1,61 +1,154 @@
+/* Container Styling */
 #container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Increased spacing between rows */
     margin: 20px auto;
+    max-width: 90%; /* Ensure container is responsive */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Row Styling */
 .row {
     display: flex;
     align-items: center;
-    gap: 20px; /* Gap between the circle row and the square */
+    justify-content: space-between; /* Ensure even spacing */
+    gap: 20px;
 }
 
+/* Circle Row Styling */
 .circle-row {
     display: flex;
-    gap: 10px; /* Gap between circles in a row */
+    gap: 15px; /* Increased spacing between circles */
 }
 
+/* Circle Styling */
 .child-div {
     width: 50px;
     height: 50px;
     background-color: lightblue;
-    border-radius: 50%; /* Makes the div a circle */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 2px solid #333;
     font-size: 14px;
     text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background-color 0.2s; /* Smooth hover effects */
 }
 
+.child-div:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+    background-color: #87cefa; /* Lighter blue for hover */
+}
+
+/* Square Feedback Container */
 .square {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Divides the square into 4 equal parts */
     width: 45px;
     height: 45px;
-    border: 2px solid black;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Light background for squares */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Square Feedback Parts */
 .square-part {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    background-color: #fff; /* Default background */
 }
 
+/* Buttons */
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: blue;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth animations */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 button:disabled {
     background-color: grey;
     cursor: not-allowed;
 }
+
+/* Check Button */
+#check-button {
+    background-color: #007bff; /* Blue */
+}
+
+/* Reload Button */
+#reload-button {
+    background-color: #28a745; /* Green */
+    margin-left: 10px;
+}
+
+/* Secret Row */
+.secret-row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Increased gap for better spacing */
+}
+
+.secret-color {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for emphasis */
+    border: 2px solid #333;
+}
+
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    #container {
+        gap: 10px;
+    }
+
+    .circle-row {
+        gap: 10px;
+    }
+
+    .child-div {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .square {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .secret-color {
+        width: 30px;
+        height: 30px;
+    }
+}
+
