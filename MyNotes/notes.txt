@@ -1,6 +1,0 @@
-There are 10 rows and each row has 4 circles.
-
-Following points should be done next time:
-
-
-    
